@@ -5,4 +5,4 @@ tmp/**/*
 doc/api
 doc/app
 config/initializers/turk_task_config.rb
-
+db/*.sqlite3

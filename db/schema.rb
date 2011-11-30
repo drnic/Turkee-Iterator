@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(:version => 20101208100827) do
   end
 
   create_table "iterations", :force => true do |t|
+    t.integer  "parent_id"
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "turkee_task_id"
-    t.integer  "parent_id"
   end
 
   create_table "turkee_imported_assignments", :force => true do |t|
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20101208100827) do
   create_table "turkee_tasks", :force => true do |t|
     t.string   "hit_url"
     t.boolean  "sandbox"
-    t.integer  "task_id"
     t.string   "task_type"
     t.text     "hit_title"
     t.text     "hit_description"
@@ -49,12 +48,12 @@ ActiveRecord::Schema.define(:version => 20101208100827) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "form_body"
-    t.boolean  "allow_voting",                                       :default => true
+    t.boolean  "allow_voting",                                       :default => false
     t.boolean  "returk",                                             :default => false
     t.integer  "returk_top_x"
     t.integer  "parent_id"
-    t.text   "returk_form_body"
-    t.boolean  "display_submissions",                                :default => true
+    t.text     "returk_form_body"
+    t.boolean  "display_submissions",                                :default => false
   end
 
 end
